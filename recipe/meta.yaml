@@ -1,6 +1,5 @@
 {% set version = '1.0' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-nipals
@@ -13,8 +12,7 @@ source:
   sha256: 1c2a70afe58354bdf6b02f4d041a9d874ac3452dfb3c80b957bc53ebe2a95aa9
 
 build:
-  merge_build_host: True  # [win]
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
