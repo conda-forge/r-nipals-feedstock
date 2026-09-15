@@ -1,18 +1,18 @@
-{% set version = '1.0' %}
+{% set version = "1.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-nipals
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/nipals_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nipals/nipals_{{ version }}.tar.gz
-  sha256: 1c2a70afe58354bdf6b02f4d041a9d874ac3452dfb3c80b957bc53ebe2a95aa9
+  sha256: 04f7fbea32bcbfa8c5fff25aa0d199de1016add5583d8a2ea3aa5bf9451c51c0
 
 build:
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -39,9 +39,7 @@ test:
 about:
   home: https://kwstat.github.io/nipals/
   license: MIT
-  summary: Principal Components Analysis of a matrix using Non-linear Iterative Partial Least
-    Squares or weighted Expectation Maximization PCA with Gram-Schmidt orthogonalization
-    of the scores and loadings. Optimized for speed. See Andrecut (2009) <doi:10.1089/cmb.2008.0221>.
+  summary: Principal Components Analysis of a matrix using Non-linear Iterative Partial Least Squares or weighted Expectation Maximization PCA with Gram-Schmidt orthogonalization of the scores and loadings. Optimized for speed. See Andrecut (2009) <doi:10.1089/cmb.2008.0221>.
   license_family: MIT
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
